@@ -1,21 +1,128 @@
+/* ====== พื้นหลังธีม Deep Sea ====== */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #041F33, #052946, #07355A);
+    color: #ffffff;
+    margin: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f9;
-    color: #333;
-    flex-direction: column;
+    overflow: hidden;
+    position: relative;
 }
+
+/* ====== ข้อความ "Im-_dsdt..." ====== */
+#container {
+    text-align: center;
+    position: absolute;
+    top: 12%;
+}
+
 h1 {
-    font-size: 2.5em;
-    border-right: 2px solid rgba(0, 0, 0, 0.75);
+    font-size: 3em;
+    font-weight: bold;
     white-space: nowrap;
     overflow: hidden;
+    color: #00c6ff; 
+    -webkit-text-stroke: 2px #0084a8;
+    text-shadow: 4px 4px 15px rgba(0, 198, 255, 0.5);
 }
-p {
+
+/* ====== I'm Lazy . . . ====== */
+#lazy-container {
+    position: absolute;
+    right: 10%;
+    top: 40%;
+    font-size: 2em;
+    color: #ff4c4c;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(255, 76, 76, 0.7);
+}
+
+/* ====== กล่องโค้ด ====== */
+.code-box {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: #00e5ff;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    min-width: 280px;
+    max-width: 400px;
+}
+
+#fixed-code { left: 10%; top: 65%; }
+#random-code { left: 10%; top: 80%; }
+
+/* ====== กล่อง Quote (ซ้ายกลาง) ====== */
+.quote-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
     font-size: 1.2em;
-    margin-top: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* ====== จุดเรืองแสง (ล่างจอ) ====== */
+#particles-container {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    height: 100px;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(0, 229, 255, 0.7);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatUp 4s infinite;
+}
+
+@keyframes floatUp {
+    0% { opacity: 0; transform: translateY(0px); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-50px); }
+}
+
+/* ====== ปลา (ล่างจอ) ====== */
+.fish-container {
+    position: absolute;
+    bottom: 10px;
+    left: -100px;
+    animation: swim 10s infinite linear;
+}
+
+.fish {
+    width: 50px;
+    height: 30px;
+    background: #00e5ff;
+    border-radius: 50%;
+    position: relative;
+}
+
+.fish::before {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background: #00e5ff;
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    transform: translateY(-50%);
+}
+
+@keyframes swim {
+    from { left: -100px; }
+    to { left: 110%; }
 }
