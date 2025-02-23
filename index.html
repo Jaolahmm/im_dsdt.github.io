@@ -3,12 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>im_dsdt.....</title>
+    <title>Im-_dsdt</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="typing"></h1>
-    <p>Welcome!</p>
+
+    <div id="container">
+        <h1 id="typing"></h1>
+    </div>
+
+    <div id="lazy-container"></div>
+
+    <!-- เส้นขีด -->
+    <div class="line"></div>
+
+    <!-- กล่องโค้ด (Fixed) -->
+    <div class="code-box" id="fixed-code">
+        <pre><code>// คำสั่งกำหนดเอง
+function fixedMessage() {
+    console.log("Stay focused and keep coding!");
+}</code></pre>
+    </div>
+
+    <!-- กล่องโค้ด (สุ่ม) -->
+    <div class="code-box" id="random-code">
+        <pre><code id="random-code-text">// สุ่มโค้ดจะแสดงที่นี่...</code></pre>
+    </div>
+
+    <!-- กล่อง Quote -->
+    <div class="quote-box">
+        <p id="quote-text">"Code is like humor. When you have to explain it, it’s bad."</p>
+    </div>
+
+    <!-- เอฟเฟกต์จุดเรืองแสง -->
+    <div id="particles-container"></div>
+
+    <!-- ปลา -->
+    <div class="fish-container">
+        <div class="fish"></div>
+    </div>
+
     <script src="script.js"></script>
+
 </body>
 </html>
